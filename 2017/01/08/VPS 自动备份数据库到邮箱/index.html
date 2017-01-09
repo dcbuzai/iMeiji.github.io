@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>VPS 自动备份数据库到邮箱 | 这是个标题 | 这是个子标题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="1.请确保在home目录下有backup目录，如果没有请执行
+1mkdir /home/backup
+2.安装Email组件，以保证数据库文件可以发送到您的邮箱1apt-get install sendmail mutt
+3.脚本开始vi backup.sh123456789101112131415161718192021222324252627282930#!/bin/bash#你要修改的地方从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VPS 自动备份数据库到邮箱">
+<meta property="og:url" content="https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/index.html">
+<meta property="og:site_name" content="这是个标题">
+<meta property="og:description" content="1.请确保在home目录下有backup目录，如果没有请执行
+1mkdir /home/backup
+2.安装Email组件，以保证数据库文件可以发送到您的邮箱1apt-get install sendmail mutt
+3.脚本开始vi backup.sh123456789101112131415161718192021222324252627282930#!/bin/bash#你要修改的地方从">
+<meta property="og:updated_time" content="2017-01-09T10:09:38.381Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VPS 自动备份数据库到邮箱">
+<meta name="twitter:description" content="1.请确保在home目录下有backup目录，如果没有请执行
+1mkdir /home/backup
+2.安装Email组件，以保证数据库文件可以发送到您的邮箱1apt-get install sendmail mutt
+3.脚本开始vi backup.sh123456789101112131415161718192021222324252627282930#!/bin/bash#你要修改的地方从">
+    
+        <link rel="alternative" href="/atom.xml" title="这是个标题" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">iMeiji</h5>
+          <a href="mailto:imeiji@qq.com" title="imeiji@qq.com" class="mail">imeiji@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/iMeiji" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">VPS 自动备份数据库到邮箱</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">VPS 自动备份数据库到邮箱</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-07T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-01-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/VPS/">VPS</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-VPS 自动备份数据库到邮箱"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">VPS 自动备份数据库到邮箱</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月08日 0:00" datetime="2017-01-07T16:00:00.000Z"  itemprop="datePublished">2017-01-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/VPS/">VPS</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>1.请确保在home目录下有backup目录，如果没有请执行</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /<span class="built_in">home</span>/backup</span><br></pre></td></tr></table></figure>
+<p>2.安装Email组件，以保证数据库文件可以发送到您的邮箱<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="keyword">get</span> install sendmail mutt</span><br></pre></td></tr></table></figure></p>
+<p>3.脚本开始<br><code>vi backup.sh</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#你要修改的地方从这里开始</span></span><br><span class="line">MYSQL_USER=数据库用户</span><br><span class="line">MYSQL_PASS=数据库密码</span><br><span class="line">MAIL_TO=发送邮箱</span><br><span class="line">WEB_DATA=/home/wwwroot	<span class="comment">#本地备份路径</span></span><br><span class="line">DOMAIN=域名</span><br><span class="line"><span class="comment">#你要修改的地方从这里结束</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义数据库的名字和旧数据库的名字</span></span><br><span class="line">DataBakName=Data_$(date +<span class="string">"%Y%m%d"</span>).tar.gz</span><br><span class="line">WebBakName=Web_$(date +%Y%m%d).tar.gz</span><br><span class="line">OldData=Data_$(date <span class="_">-d</span> -5day +<span class="string">"%Y%m%d"</span>).tar.gz</span><br><span class="line">OldWeb=Web_$(date <span class="_">-d</span> -5day +<span class="string">"%Y%m%d"</span>).tar.gz</span><br><span class="line"><span class="comment">#删除本地3天前的数据</span></span><br><span class="line">rm -rf /home/backup/Data_$(date <span class="_">-d</span> -3day +<span class="string">"%Y%m%d"</span>).tar.gz /home/backup/Web_$(date <span class="_">-d</span> -3day +<span class="string">"%Y%m%d"</span>).tar.gz</span><br><span class="line"><span class="built_in">cd</span> /home/backup</span><br><span class="line"><span class="comment">#导出数据库,一个数据库一个压缩文件</span></span><br><span class="line"><span class="keyword">for</span> db <span class="keyword">in</span> `/usr/bin/mysql -u<span class="variable">$MYSQL_USER</span> -p<span class="variable">$MYSQL_PASS</span> -B -N <span class="_">-e</span> <span class="string">'SHOW DATABASES'</span> | xargs`; <span class="keyword">do</span></span><br><span class="line">    (/usr/bin/mysqldump -u<span class="variable">$MYSQL_USER</span> -p<span class="variable">$MYSQL_PASS</span> <span class="variable">$&#123;db&#125;</span> | gzip -9 - &gt; <span class="variable">$&#123;db&#125;</span>.sql.gz)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment">#压缩数据库文件为一个文件</span></span><br><span class="line">tar zcf /home/backup/<span class="variable">$DataBakName</span> /home/backup/*.sql.gz</span><br><span class="line">rm -rf /home/backup/*.sql.gz</span><br><span class="line"><span class="comment">#发送数据库到Email,如果数据库压缩后太大,请注释这行</span></span><br><span class="line"><span class="comment">#echo "主题:数据库备份" | mutt -e "my_hdr from:$DOMAIN&lt;root@$DOMAIN&gt;" -a /home/backup/$DataBakName -s "内容:数据库备份" -- $MAIL_TO</span></span><br><span class="line"><span class="comment">#压缩网站数据</span></span><br><span class="line">tar zcf /home/backup/<span class="variable">$WebBakName</span> <span class="variable">$WEB_DATA</span></span><br><span class="line"><span class="comment">#发送网站数据和数据库到Email</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"主题:网站备份"</span> | mutt <span class="_">-e</span> <span class="string">"my_hdr from:<span class="variable">$DOMAIN</span>&lt;root@<span class="variable">$DOMAIN</span>&gt;"</span> <span class="_">-a</span> /home/backup/<span class="variable">$DataBakName</span> /home/backup/<span class="variable">$DataBakName</span> <span class="_">-s</span> <span class="string">"内容:网站备份"</span> -- <span class="variable">$MAIL_TO</span></span><br></pre></td></tr></table></figure></p>
+<p>4.执行脚本定时备份<br>执行文件赋予权限<br><code>chmod +x /root/backup.sh</code><br>准备添加定时设置,每天半夜12点备份数据<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -<span class="built_in">e</span></span><br><span class="line">00 00 * * * <span class="keyword">sh</span> /root/backup.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p>
+<p>重启Crontab<br><code>/etc/init.d/cron restart</code>  </p>
+<p>参考:<br><a href="http://www.laozuo.org/4560.html" target="_blank" rel="external">http://www.laozuo.org/4560.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-09T10:09:38.381Z" itemprop="dateUpdated">2017年1月9日 18:09</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2017/01/08/VPS 自动备份数据库到邮箱/" target="_blank" rel="external">https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/</a>
+    </div>
+    <footer>
+        <a href="https://imeiji.github.io">
+            <img src="/img/avatar.jpg" alt="iMeiji">
+            iMeiji
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/&title=《VPS 自动备份数据库到邮箱》 — 这是个标题&pic=https://imeiji.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/&title=《VPS 自动备份数据库到邮箱》 — 这是个标题&source=描述一下" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VPS 自动备份数据库到邮箱》 — 这是个标题&url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/&via=https://imeiji.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/01/09/搭建 sspanel v3 魔改版记录/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">搭建 sspanel v3 魔改版记录</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/05/今日头条Api分析/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">今日头条Api分析</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="VPS 自动备份数据库到邮箱" data-title="VPS 自动备份数据库到邮箱" data-url="https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'imeiji', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.4');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>这是个标题 &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/&title=《VPS 自动备份数据库到邮箱》 — 这是个标题&pic=https://imeiji.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/&title=《VPS 自动备份数据库到邮箱》 — 这是个标题&source=描述一下" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VPS 自动备份数据库到邮箱》 — 这是个标题&url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/&via=https://imeiji.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3aMXLcMAwF0L3/pZ2ZVM7YlD8AIt7iscqsFRGPBQmBeL3i8fF3fP3l83h+8vTL8/99fs+1gYeHh9cK/TS+PnP6JQkrfz6f/RQzHh4e3jYvCWuyiT/P8nxU5LPj4eHhvRuvxzht2ckxU02+8fDw8N6ZlwTU29wnqTkeHh7e/+QlxYhqet1bgueoFmsteHh4eDFvsin/1r8X7/fw8PDwBrfq1cuw5wQ6mX0e4T9vw8PDw1vgTS6ZesXZeZNW3nCAh4eHt8GrFgV65dpeIThPso9z4eHh4S3z8vQ3f74a9KQ4e/xiwMPDw7vKq7YITK6+kmMj/2venoWHh4e3wZu8ojxNcSF6rQmFyzA8PDy8Ii/fjje27zye/M3R1RceHh7emJc3WuWkSRG2+mTUKYaHh4d3ldcrN+QT58XZvCwSLQQeHh7eAi/51J80YFUPgOoRVaiy4OHh4V3iTdLZ/OK/14iQH1qFnjI8PDy8S7xryWt8JOTJdLWQcfxiwMPDw7vEu1X5rLYL9MoW+YUcHh4e3h4vSWSrDVJ5oNVkutywhYeHh7fGm0yf1E57B0w1Qf9mFjw8PLxlXnWCW8h568BxXjw8PLwFXv7SfIuvbu53GwtevTXDw8PDG/DyzT0Pulr2nVSjv5kRDw8Pb4F368J+UurNk+beguLh4eHd4iVX8tVkupdwVxsFosXFw8PD+yXevGg7X6Ck6Hz8VsDDw8O7yquWdCcB5WElC1ot9eLh4eHd4n0UR+8wqBYaekdLuacMDw8Pr8XLR55wJ5t+XsadFJfx8PDw9njVQG9dgE3enJdF8PDw8PZ4vTbWXsqbp8Kj0wwPDw/vDXgJclLe3YgQDw8P7x14SfKdlw9ulYx/6I/Aw8PDW+BVixG9C63q5t5bAjw8PLxt3iS4yZV/suk/zztqF8DDw8Pr8P4AUVEiFpVzvvQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.4"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.4" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

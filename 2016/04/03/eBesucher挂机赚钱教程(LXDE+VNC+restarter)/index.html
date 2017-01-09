@@ -84,6 +84,13 @@
             </li>
         
             <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
               <a href="https://github.com/iMeiji" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
@@ -197,7 +204,7 @@
 <li>安装LXDE环境<br><code>apt-get install xorg lxde-core tightvncserver</code><br>其中xorg为x window，tightvncserver为vnc server<br>在过程中有一个机器地区选择，我们默认回车就可以。</li>
 <li>启动VNC/输入密码<br><code>tightvncserver :1</code><br>需要输入vnc密码，提示”Would you like to enter a view-only password (y/n)?”时回车即可</li>
 <li><p>配置xstartup系统文件<br>首先要暂停vnc，可以使用如下代码：<br><code>tightvncserver -kill :1</code><br>编辑xstartup文件：<br><code>vi ~/.vnc/xstartup</code><br>然后在文件的最后添加下面的脚本代码  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lxterminal &amp;</span><br><span class="line">/usr/bin/lxsession <span class="_">-s</span> LXDE &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">lxterminal</span> &amp;</span><br><span class="line">/usr/<span class="keyword">bin/lxsession </span>-s LXDE &amp;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重启VNC<br><code>tightvncserver :1</code></p>
 </li>
@@ -357,9 +364,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/01/09/搭建 sspanel v3 魔改版记录/" id="post-prev" class="post-nav-link">
+      <a href="/2017/01/05/今日头条Api分析/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">搭建 sspanel v3 魔改版记录</h4>
+        <h4 class="title">今日头条Api分析</h4>
       </a>
     </div>
   
@@ -378,6 +385,18 @@
 
     
 
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="eBesucher挂机赚钱教程(LXDE+VNC+restarter)" data-title="eBesucher挂机赚钱教程(LXDE+VNC+restarter)" data-url="https://imeiji.github.io/2016/04/03/eBesucher挂机赚钱教程(LXDE+VNC+restarter)/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'imeiji', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.4');
+
+
+</script>
+
 
 
 
@@ -395,17 +414,7 @@
     </h3>
     <ul class="reward-items">
         
-        <li>
-            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
-        
 
-        
-        <li>
-            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
         
     </ul>
 </div>
