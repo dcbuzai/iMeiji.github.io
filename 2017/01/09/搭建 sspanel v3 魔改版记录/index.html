@@ -34,7 +34,7 @@
 演示环境 : VirMach 512RAM机子 Ubuntu 14 x64
 安装前端1.安装 LNMP
 1234567screen -S lnmp2G以上内存wget htt">
-<meta property="og:updated_time" content="2017-01-09T07:57:46.929Z">
+<meta property="og:updated_time" content="2017-01-09T16:42:16.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建 sspanel v3 魔改版记录">
 <meta name="twitter:description" content="前端使用赵大的魔改版 https://github.com/esdeathlove/ss-panel-v3-mod
@@ -246,8 +246,8 @@
 <p>按照提示, 输入管理员邮箱密码等信息, 然后执行以下命令同步用户</p>
 <p><code>php xcat syncusers</code>  </p>
 <p>此时管理员创建完成</p>
-<p>接下来需要对服务器进行计划任务的设置,执行以下命令命令</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">30 22 * * * php /home/wwwroot/站点文件夹/xcat sendDiaryMail </span><br><span class="line">*/1 * * * * php /home/wwwroot/站点文件夹/xcat synclogin</span><br><span class="line">*/1 * * * * php /home/wwwroot/站点文件夹/xcat syncvpn</span><br><span class="line">0 0 * * * php -n /home/wwwroot/站点文件夹/xcat dailyjob</span><br><span class="line">*/1 * * * * php /home/wwwroot/站点文件夹/xcat checkjob    </span><br><span class="line">*/1 * * * * php -n /home/wwwroot/站点文件夹/xcat syncnas</span><br></pre></td></tr></table></figure>
+<p>接下来需要对服务器进行计划任务的设置,执行 <code>crontab -e</code> 命令, 添加以下五段</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">30 22 * * * php /home/wwwroot/站点文件夹/xcat sendDiaryMail </span><br><span class="line">*/1 * * * * php /home/wwwroot/站点文件夹/xcat synclogin</span><br><span class="line">*/1 * * * * php /home/wwwroot/站点文件夹/xcat syncvpn</span><br><span class="line">0 0 * * * php /home/wwwroot/站点文件夹/xcat dailyjob</span><br><span class="line">*/1 * * * * php /home/wwwroot/站点文件夹/xcat checkjob    </span><br><span class="line">*/1 * * * * php /home/wwwroot/站点文件夹/xcat syncnas</span><br></pre></td></tr></table></figure>
 <p>重启Crontab<br><code>/etc/init.d/cron restart</code>  </p>
 <p>7.注意事项</p>
 <p>检查时间是否为天朝时间</p>
@@ -305,7 +305,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-09T07:57:46.929Z" itemprop="dateUpdated">2017年1月9日 15:57</time>
+    最后更新时间：<time datetime="2017-01-09T16:42:16.814Z" itemprop="dateUpdated">2017年1月10日 0:42</time>
 </span><br>
 
 
