@@ -32,7 +32,7 @@
 关于收益也不好说，各个地区的IP不一样，德国IP最值钱，但是德国IP比较贵；其他欧美地区的IP差不多，收益不多，但是好在可以多台VPS同时挂机，要做到支付还是相当轻松的（100000积分=2.1欧元，2欧元起付，Paypal支付）。
 
 挂机条">
-<meta property="og:updated_time" content="2016-08-24T09:41:01.406Z">
+<meta property="og:updated_time" content="2017-03-20T12:03:12.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eBesucher挂机赚钱教程(LXDE+VNC+restarter)">
 <meta name="twitter:description" content="ebesucher是德国目前最著名的自动冲浪赚钱站，该站最低提现金额PAYPAL2欧元，此站除了可以通过自动冲浪来赚钱之外，还可以通过邮件交换的方式来赚钱
@@ -154,7 +154,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装轻量级桌面LXDE-VNC"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装轻量级桌面LXDE+VNC</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装浏览器和Flash"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装浏览器和Flash</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Java"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Java</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装restarter"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装restarter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置restarter"><span class="post-toc-number">5.</span> <span class="post-toc-text">设置restarter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优化restarter"><span class="post-toc-number">6.</span> <span class="post-toc-text">优化restarter</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装轻量级桌面LXDE-VNC"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装轻量级桌面LXDE+VNC</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装浏览器和Flash"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装浏览器和Flash</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Java-可选"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Java(可选)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装restarter-可选"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装restarter(可选)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置restarter-可选"><span class="post-toc-number">5.</span> <span class="post-toc-text">设置restarter(可选)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始冲浪"><span class="post-toc-number">6.</span> <span class="post-toc-text">开始冲浪</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优化"><span class="post-toc-number">7.</span> <span class="post-toc-text">优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用docker"><span class="post-toc-number">8.</span> <span class="post-toc-text">使用docker</span></a></li></ol>
         </nav>
     </aside>
     
@@ -193,7 +193,8 @@
 <p>挂机准备</p>
 <ul>
 <li>ebesucher注册地址: <a href="http://www.ebesucher.com/?ref=MeijiLee" target="_blank" rel="external">https://www.ebesucher.com</a><br>尽量还是要填写真实信息，收款时会验证手机号，请务必国籍填写中国。</li>
-<li>安装VNC,浏览器,Java,restarter</li>
+<li>必须安装 VNC, 浏览器</li>
+<li>可选安装 Java, restarter</li>
 </ul>
 <h2 id="安装轻量级桌面LXDE-VNC"><a href="#安装轻量级桌面LXDE-VNC" class="headerlink" title="安装轻量级桌面LXDE+VNC"></a>安装轻量级桌面LXDE+VNC</h2><blockquote>
 <p>LXDE，全名为Lightweight X11 Desktop Environment，是一个自由桌面环境，可在Unix以及如Linux、BSD等POSIX相容平台上执行。廉价迷你Linux机器Raspberry Pi安装的就是这个桌面，LXDE支持debian及ubuntu环境。</p>
@@ -220,16 +221,16 @@
 <li><p>安装Firefox</p>
 <figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># debian</span></span><br><span class="line">apt-<span class="keyword">get</span> install iceweasel</span><br><span class="line"><span class="meta"># Ubuntu</span></span><br><span class="line">apt-<span class="keyword">get</span> install firefox</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>安装chrome</p>
+<li><p>安装chrome(可选)</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">32</span>位</span><br><span class="line">wget http<span class="variable">s:</span>//<span class="keyword">dl</span>.google.<span class="keyword">com</span>/linux/direct/google-chrome-stable_current_i386.<span class="keyword">deb</span></span><br><span class="line">dpkg -i google-chrome-stable_current_i386.<span class="keyword">deb</span></span><br><span class="line"># <span class="number">64</span>位</span><br><span class="line">wget http<span class="variable">s:</span>//<span class="keyword">dl</span>.google.<span class="keyword">com</span>/linux/direct/google-chrome-stable_current_amd64.<span class="keyword">deb</span></span><br><span class="line">dpkg -i google-chrome-stable_current_amd64.<span class="keyword">deb</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装Flash<br>方法一:</p>
 <figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/apt/sources.list</span><br><span class="line"><span class="meta"># 添加如下源</span></span><br><span class="line">deb ftp:<span class="comment">//ftp.debian.org/debian stable main contrib non-free</span></span><br><span class="line"><span class="meta"># 更新源</span></span><br><span class="line">apt-<span class="keyword">get</span> update</span><br><span class="line"><span class="meta"># 安装flashplugin-nonfree</span></span><br><span class="line">apt-<span class="keyword">get</span> install flashplugin-nonfree</span><br><span class="line"><span class="meta"># 安装成功后重启firefox，进入firefox的插件设置页面,看看是否成功</span></span><br></pre></td></tr></table></figure>
-<p>  方法二:</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="string">http:</span><span class="comment">//vagex-debian.googlecode.com/files/libflashplayer.so</span></span><br><span class="line">mkdir -p <span class="regexp">/usr/</span>lib<span class="regexp">/firefox/</span>plugins</span><br><span class="line">mv libflashplayer.so <span class="regexp">/usr/</span>lib<span class="regexp">/firefox/</span>plugins</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h2><ul>
+<p>​    方法二:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://fpdownload.adobe.com/get/flashplayer/pdc/24.0.0.221/flash_player_npapi_linux.x86_64.tar.gz</span><br><span class="line">tar -zxf flash_player_*_linux.x86_64.tar.gz</span><br><span class="line">cp libflashplayer.so /usr/lib/mozilla/plugins/</span><br><span class="line">cp -r usr /usr</span><br><span class="line"># 最新下载地址 https://get.adobe.com/cn/flashplayer/otherversions/</span><br></pre></td></tr></table></figure>
+<h2 id="安装Java-可选"><a href="#安装Java-可选" class="headerlink" title="安装Java(可选)"></a>安装Java(可选)</h2><ul>
 <li><p>Debian</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"</span> | tee /etc/apt/sources.list.d/webupd8team-java.list</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"</span> | tee <span class="_">-a</span> /etc/apt/sources.list.d/webupd8team-java.list</span><br><span class="line">apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install oracle-java8-installer</span><br></pre></td></tr></table></figure>
 </li>
@@ -237,7 +238,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-software-propertie  software-properties-common</span><br><span class="line">add-apt-repository ppa:webupd8team/java</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install oracle-java8-installer</span><br><span class="line"><span class="comment"># 选择Java版本(可选)</span></span><br><span class="line">update-alternatives --config java</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="安装restarter"><a href="#安装restarter" class="headerlink" title="安装restarter"></a>安装restarter</h2><blockquote>
+<h2 id="安装restarter-可选"><a href="#安装restarter-可选" class="headerlink" title="安装restarter(可选)"></a>安装restarter(可选)</h2><blockquote>
 <p>restarter是ebesucher提供的挂机辅助工具，可以在浏览器出现错误（冲浪的网站弹窗，卡死，崩溃等）时自动重启浏览器，这样极大的方便了我们挂机，避免手动维护。</p>
 </blockquote>
 <ul>
@@ -249,17 +250,29 @@
 </li>
 </ul>
 <p>这样就已启动restarter</p>
-<h2 id="设置restarter"><a href="#设置restarter" class="headerlink" title="设置restarter"></a>设置restarter</h2><blockquote>
+<h2 id="设置restarter-可选"><a href="#设置restarter-可选" class="headerlink" title="设置restarter(可选)"></a>设置restarter(可选)</h2><blockquote>
 <p>启动restarter之后需要对restarter进行设置</p>
 </blockquote>
 <ol>
 <li>输入username和CODE。<br>CODE可以在 <a href="http://www.ebesucher.com/restarter.html" target="_blank" rel="external">http://www.ebesucher.com/restarter.html</a> 中找到</li>
 <li>选择语言language<br>有三个选项，到这里查看你的地址 <a href="https://www.ebesucher.com/punkteverdienen.html" target="_blank" rel="external">https://www.ebesucher.com/punkteverdienen.html</a><br>一般我们选择ebesucher.de</li>
 <li>选择浏览器<br>优先选择Firefox<br>chrome需要手动设置路径 <code>/opt/google/chrome/chrome --user-data-dir</code>  </li>
-<li>安装Firefox插件<br><a href="https://www.ebesucher.com/addon.html" target="_blank" rel="external">https://www.ebesucher.com/addon.html</a></li>
 </ol>
 <p>点击start surfbar即可启动firefox开始冲浪</p>
-<h2 id="优化restarter"><a href="#优化restarter" class="headerlink" title="优化restarter"></a>优化restarter</h2><ol>
+<h2 id="开始冲浪"><a href="#开始冲浪" class="headerlink" title="开始冲浪"></a>开始冲浪</h2><ol>
+<li><p>安装 Firefox 插件并设置好你的 username</p>
+<p><a href="https://www.ebesucher.com/addon.html" target="_blank" rel="external">https://www.ebesucher.com/addon.html</a></p>
+</li>
+<li><p>检查 flash 是否安装成功</p>
+</li>
+<li><p>点击插件, 开始挂机</p>
+</li>
+<li><p>选择一个积分最多的地区</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//www.ebesucher.de/surfbar/username</span></span><br><span class="line"><span class="symbol">http:</span><span class="comment">//www.ebesucher.com/surfbar/username</span></span><br><span class="line"><span class="symbol">http:</span><span class="comment">//www.ebesucher.ru/surfbar/username</span></span><br><span class="line"><span class="symbol">http:</span><span class="comment">//www.ebesucher.es/surfbar/username</span></span><br><span class="line"><span class="symbol">http:</span><span class="comment">//www.ebesucher.fr/surfbar/username</span></span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
 <li><p>浏览器不保存历史记录<br>这一点比较重要，因为你一直在冲浪如果保存历史记录，会导致大量的记录文件。<br>进入firefox的preferences-privacy-history，设置为never remember history</p>
 </li>
 <li><p>制作脚本,定时重启浏览器及restarter</p>
@@ -267,15 +280,18 @@
 </ol>
 <ul>
 <li><p>Firefox</p>
-<p>  <code>vi /root/Desktop/restart_ff.sh</code><br>写入以下内容</p>
+<p><code>vi /root/Desktop/restart_ff.sh</code><br>写入以下内容</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">export</span> DISPLAY=localhost:1.0</span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line">rm -rf ~/.vnc/*.log /tmp/plugtmp* &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">killall firefox &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">killall java &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">/usr/bin/firefox --new-tab http://www.ebesucher.com/surfbar/username &gt; /dev/null 2&gt;&amp;1 </span><br><span class="line">/usr/bin/java -jar /root/restarter.jar &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
 <p>  其中，<a href="http://www.ebesucher.com/surfbar/username中的username改为你的用户名" target="_blank" rel="external">http://www.ebesucher.com/surfbar/username中的username改为你的用户名</a><br>  给脚本添加可执行权限<br>  <code>chmod a+x /root/Desktop/restart_ff.sh</code><br>  编辑cron<br>  <code>vi /etc/crontab</code><br>  设置每小时执行一次该脚本<br>  <code>0 * * * * root /root/Desktop/restart_ff.sh</code><br>  重启cron<br>  <code>service cron restart</code></p>
 </li>
-<li><p>chrome<br>  <code>vi /root/Desktop/restart_ch.sh</code><br>写入以下内容  </p>
+<li><p>chrome<br> <code>vi /root/Desktop/restart_ch.sh</code><br>  写入以下内容  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">export</span> DISPLAY=localhost:1.0</span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line">rm -rf ~/.vnc/*.log /tmp/plugtmp* &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">killall java &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">killall chrome &gt; /dev/null 2&gt;&amp;1</span><br><span class="line">/opt/google/chrome/chrome --new-tab http://www.ebesucher.com/surfbar/username --user-data-dir  &gt; /dev/null 2&gt;&amp;1 </span><br><span class="line">/usr/bin/java -jar /root/restarter.jar &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
 <p>  其中，<a href="http://www.ebesucher.com/surfbar/username中的username改为你的用户名" target="_blank" rel="external">http://www.ebesucher.com/surfbar/username中的username改为你的用户名</a><br>  给脚本添加可执行权限<br>  <code>chmod a+x /root/Desktop/restart_ch.sh</code><br>  编辑cron<br>  <code>vi /etc/crontab</code><br>  设置每小时执行一次该脚本<br>  <code>0 * * * * root /root/Desktop/restart_ch.sh</code><br>  重启cron<br>  <code>service cron restart</code>    </p>
+<p>  3.使用 cpulimit 限制 firefox 的使用, 防止卡死</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install cpulimit</span><br><span class="line"># 限制firefox使用50% cpu 利用率</span><br><span class="line">cpulimit -e firefox -l 50 &gt; /dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h2 id="使用docker"><a href="#使用docker" class="headerlink" title="使用docker"></a>使用docker</h2><p>使用docker挂机 详细教程查看 <a href="https://github.com/iMeiji/arukas-docker" target="_blank" rel="external">https://github.com/iMeiji/arukas-docker</a></p>
 <hr>
 <p>参考<br><a href="http://www.tennfy.com/2761.html" target="_blank" rel="external">TENNFY WU » Ebesucher debian vps挂机教程之restarter篇</a></p>
 
@@ -285,7 +301,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2016-08-24T09:41:01.406Z" itemprop="dateUpdated">2016年8月24日 17:41</time>
+    最后更新时间：<time datetime="2017-03-20T12:03:12.565Z" itemprop="dateUpdated">2017年3月20日 20:03</time>
 </span><br>
 
 

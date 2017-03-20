@@ -34,7 +34,7 @@
 演示环境 : VirMach 512RAM机子 Ubuntu 14 x64
 安装前端1.安装 LNMP
 1234567screen -S lnmp2G以上内存wget htt">
-<meta property="og:updated_time" content="2017-01-13T08:28:24.378Z">
+<meta property="og:updated_time" content="2017-03-20T11:21:18.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建 sspanel v3 魔改版记录">
 <meta name="twitter:description" content="前端使用赵大的魔改版 https://github.com/esdeathlove/ss-panel-v3-mod
@@ -201,7 +201,7 @@
 <p>修改 root 那一行为</p>
 <p><code>root /home/wwwroot/你的域名/public;</code></p>
 <p>3.下载 sspanel 代码</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/你的域名</span><br><span class="line">apt-get install git -y</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/glzjin/ss-panel-v3-mod.git tmp &amp;&amp; mv tmp/.git . &amp;&amp; rm -rf tmp &amp;&amp; git reset --hard</span><br><span class="line">chown -R root:root *</span><br><span class="line">chmod -R 755 *</span><br><span class="line">chown -R www:www storage</span><br><span class="line">chattr -i .user.ini</span><br><span class="line">mv .user.ini public</span><br><span class="line"><span class="built_in">cd</span> public</span><br><span class="line">chattr +i .user.ini</span><br><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/wwwroot/你的域名</span><br><span class="line">apt-get install git -y</span><br><span class="line">git <span class="built_in">clone</span> -b master https://github.com/esdeathlove/ss-panel-v3-mod.git tmp &amp;&amp; mv tmp/.git . &amp;&amp; rm -rf tmp &amp;&amp; git reset --hard</span><br><span class="line">chown -R root:root *</span><br><span class="line">chmod -R 755 *</span><br><span class="line">chown -R www:www storage</span><br><span class="line">chattr -i .user.ini</span><br><span class="line">mv .user.ini public</span><br><span class="line"><span class="built_in">cd</span> public</span><br><span class="line">chattr +i .user.ini</span><br><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>
 <p>4.安装 radius , 不使用VPN的话, 可以不进行这一步</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先安装perl</span></span><br><span class="line">apt-get install perl  </span><br><span class="line"><span class="comment"># 然后需要安装perl的DBI组件</span></span><br><span class="line">perl -MCPAN <span class="_">-e</span> shell</span><br><span class="line">cpan&gt;install DBI</span><br><span class="line"></span><br><span class="line">//安装完成后退出cpan</span><br><span class="line">cpan&gt;quit</span><br><span class="line"><span class="comment"># 再安装其它组件</span></span><br><span class="line">apt install freeradius freeradius-mysql freeradius-utils</span><br></pre></td></tr></table></figure>
 <p>5.配置数据库</p>
@@ -290,7 +290,7 @@
 <li><p>限制IP</p>
 <p>在 phpMyAdmin 的目录下新增 <code>.htaccess</code> 写入以下</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">allow from 59.168.1.0/24</span><br><span class="line">allow from 59.168.2.50</span><br><span class="line">deny from all</span><br></pre></td></tr></table></figure>
-<p>除了 59.168.1.0 至 59.168.1.24 的区间IP 与 59.168.2.50可以进入后台其于IP都封锁, 就算对方知道路径, IP不允许也是无法进入</p>
+<p>除了 59.168.1.1 至 59.168.1.254 的区间IP 与 59.168.2.50 可以进入后台其于IP都封锁, 就算对方知道路径, IP不允许也是无法进入</p>
 </li>
 </ul>
 <hr>
@@ -305,7 +305,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-13T08:28:24.378Z" itemprop="dateUpdated">2017年1月13日 16:28</time>
+    最后更新时间：<time datetime="2017-03-20T11:21:18.502Z" itemprop="dateUpdated">2017年3月20日 19:21</time>
 </span><br>
 
 
