@@ -40,10 +40,10 @@
 2.安装Email组件，以保证数据库文件可以发送到您的邮箱1apt-get install sendmail mutt
 3.脚本开始vi backup.sh123456789101112131415161718192021222324252627282930#!/bin/bash#你要修改的地方从">
     
-        <link rel="alternative" href="/atom.xml" title="这是个标题" type="application/atom+xml">
+        <link rel="alternate" type="application/atom+xml" title="这是个标题" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 </head>
 
@@ -55,14 +55,14 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">iMeiji</h5>
-          <a href="mailto:imeiji@qq.com" title="imeiji@qq.com" class="mail">imeiji@qq.com</a>
+          <a href="mailto:meijilmz@gmail.com" title="meijilmz@gmail.com" class="mail">meijilmz@gmail.com</a>
         </hgroup>
       </div>
     </div>
@@ -114,7 +114,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -146,6 +146,7 @@
 
     
 
+
 </header>
 
 
@@ -157,7 +158,7 @@
     <div class="post-card">
         <h1 class="post-card-title">VPS 自动备份数据库到邮箱</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017年01月08日 0:00" datetime="2017-01-07T16:00:00.000Z"  itemprop="datePublished">2017-01-08</time>
+            <time class="post-time" title="2017-01-08 00:00:00" datetime="2017-01-07T16:00:00.000Z"  itemprop="datePublished">2017-01-08</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/VPS/">VPS</a></li></ul>
@@ -188,11 +189,13 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-09T10:09:38.381Z" itemprop="dateUpdated">2017年1月9日 18:09</time>
+    Last updated: <time datetime="2017-01-09T10:09:38.381Z" itemprop="dateUpdated">2017-01-09 18:09:38</time>
 </span><br>
 
 
-        这里写留言或版权声明：<a href="/2017/01/08/VPS 自动备份数据库到邮箱/" target="_blank" rel="external">https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/</a>
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/01/08/VPS 自动备份数据库到邮箱/" target="_blank" rel="external">https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/</a>
+        
     </div>
     <footer>
         <a href="https://imeiji.github.io">
@@ -288,17 +291,23 @@
 
     
 
-<div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="VPS 自动备份数据库到邮箱" data-title="VPS 自动备份数据库到邮箱" data-url="https://imeiji.github.io/2017/01/08/VPS 自动备份数据库到邮箱/"></div>
-</div>
-<script>
-lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
-
-var duoshuoQuery = {short_name:'imeiji', theme: 'none'};
-lazyScripts.push('/js/embed.min.js?v=1.4.4');
 
 
-</script>
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'imeijimyblog';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
 
 
 
@@ -340,14 +349,16 @@ lazyScripts.push('/js/embed.min.js?v=1.4.4');
 
 
         <p>
-            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
         <p>
             <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>这是个标题 &copy; 2015 - 2017</span>
+            <span>iMeiji &copy; 2015 - 2017</span>
         </p>
     </div>
 </footer>
@@ -411,7 +422,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 </script>
 
-<script src="/js/main.min.js?v=1.4.4"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -431,7 +442,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.4.4" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -439,6 +450,26 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
 
 
 </body>

@@ -40,10 +40,10 @@
 
 挂机条">
     
-        <link rel="alternative" href="/atom.xml" title="这是个标题" type="application/atom+xml">
+        <link rel="alternate" type="application/atom+xml" title="这是个标题" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 </head>
 
@@ -55,14 +55,14 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">iMeiji</h5>
-          <a href="mailto:imeiji@qq.com" title="imeiji@qq.com" class="mail">imeiji@qq.com</a>
+          <a href="mailto:meijilmz@gmail.com" title="meijilmz@gmail.com" class="mail">meijilmz@gmail.com</a>
         </hgroup>
       </div>
     </div>
@@ -114,7 +114,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -146,6 +146,7 @@
 
     
 
+
 </header>
 
 
@@ -164,7 +165,7 @@
     <div class="post-card">
         <h1 class="post-card-title">eBesucher挂机赚钱教程(LXDE+VNC+restarter)</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016年04月03日 16:15" datetime="2016-04-03T08:15:07.000Z"  itemprop="datePublished">2016-04-03</time>
+            <time class="post-time" title="2016-04-03 16:15:07" datetime="2016-04-03T08:15:07.000Z"  itemprop="datePublished">2016-04-03</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/VPS/">VPS</a></li></ul>
@@ -205,7 +206,7 @@
 <li>安装LXDE环境<br><code>apt-get install xorg lxde-core tightvncserver</code><br>其中xorg为x window，tightvncserver为vnc server<br>在过程中有一个机器地区选择，我们默认回车就可以。</li>
 <li>启动VNC/输入密码<br><code>tightvncserver :1</code><br>需要输入vnc密码，提示”Would you like to enter a view-only password (y/n)?”时回车即可</li>
 <li><p>配置xstartup系统文件<br>首先要暂停vnc，可以使用如下代码：<br><code>tightvncserver -kill :1</code><br>编辑xstartup文件：<br><code>vi ~/.vnc/xstartup</code><br>然后在文件的最后添加下面的脚本代码  </p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">lxterminal</span> &amp;</span><br><span class="line">/usr/<span class="keyword">bin/lxsession </span>-s LXDE &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lxterminal &amp;</span><br><span class="line">/usr/bin/lxsession <span class="_">-s</span> LXDE &amp;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重启VNC<br><code>tightvncserver :1</code></p>
 </li>
@@ -301,11 +302,13 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-20T12:03:12.565Z" itemprop="dateUpdated">2017年3月20日 20:03</time>
+    Last updated: <time datetime="2017-03-20T12:03:12.565Z" itemprop="dateUpdated">2017-03-20 20:03:12</time>
 </span><br>
 
 
-        这里写留言或版权声明：<a href="/2016/04/03/eBesucher挂机赚钱教程(LXDE+VNC+restarter)/" target="_blank" rel="external">https://imeiji.github.io/2016/04/03/eBesucher挂机赚钱教程(LXDE+VNC+restarter)/</a>
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2016/04/03/eBesucher挂机赚钱教程(LXDE+VNC+restarter)/" target="_blank" rel="external">https://imeiji.github.io/2016/04/03/eBesucher挂机赚钱教程(LXDE+VNC+restarter)/</a>
+        
     </div>
     <footer>
         <a href="https://imeiji.github.io">
@@ -401,17 +404,23 @@
 
     
 
-<div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="eBesucher挂机赚钱教程(LXDE+VNC+restarter)" data-title="eBesucher挂机赚钱教程(LXDE+VNC+restarter)" data-url="https://imeiji.github.io/2016/04/03/eBesucher挂机赚钱教程(LXDE+VNC+restarter)/"></div>
-</div>
-<script>
-lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
-
-var duoshuoQuery = {short_name:'imeiji', theme: 'none'};
-lazyScripts.push('/js/embed.min.js?v=1.4.4');
 
 
-</script>
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'imeijimyblog';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
 
 
 
@@ -453,14 +462,16 @@ lazyScripts.push('/js/embed.min.js?v=1.4.4');
 
 
         <p>
-            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
         <p>
             <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>这是个标题 &copy; 2015 - 2017</span>
+            <span>iMeiji &copy; 2015 - 2017</span>
         </p>
     </div>
 </footer>
@@ -524,7 +535,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 </script>
 
-<script src="/js/main.min.js?v=1.4.4"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -544,7 +555,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.4.4" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -552,6 +563,26 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
 
 
 </body>

@@ -34,10 +34,10 @@
 <meta name="twitter:description" content="获取新闻标题普通用法1http://toutiao.com/api/article/recent/?source=2&amp;amp;category=类型&amp;amp;as=A1D5D87595C3287
 例如获取热点新闻1http://toutiao.com/api/article/recent/?source=2&amp;amp;category=news_hot&amp;amp;as=A1D5D87595C3287">
     
-        <link rel="alternative" href="/atom.xml" title="这是个标题" type="application/atom+xml">
+        <link rel="alternate" type="application/atom+xml" title="这是个标题" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 </head>
 
@@ -49,14 +49,14 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">iMeiji</h5>
-          <a href="mailto:imeiji@qq.com" title="imeiji@qq.com" class="mail">imeiji@qq.com</a>
+          <a href="mailto:meijilmz@gmail.com" title="meijilmz@gmail.com" class="mail">meijilmz@gmail.com</a>
         </hgroup>
       </div>
     </div>
@@ -108,7 +108,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -140,6 +140,7 @@
 
     
 
+
 </header>
 
 
@@ -158,7 +159,7 @@
     <div class="post-card">
         <h1 class="post-card-title">今日头条Api分析</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017年01月05日 0:00" datetime="2017-01-04T16:00:00.000Z"  itemprop="datePublished">2017-01-05</time>
+            <time class="post-time" title="2017-01-05 00:00:00" datetime="2017-01-04T16:00:00.000Z"  itemprop="datePublished">2017-01-05</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Default/">Default</a></li></ul>
@@ -179,7 +180,7 @@
 <p>例如获取热点新闻<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://toutiao.<span class="keyword">com</span>/api/article/recent/?<span class="keyword">source</span>=<span class="number">2</span>&amp;category=news_hot&amp;<span class="keyword">as</span>=A1D5D87595C3287</span><br></pre></td></tr></table></figure></p>
 <p>其中 <code>category</code> 指类型 <code>as</code> 值随机生成 感兴趣的自己去抓取<br>得到的信息为<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"has_more"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"message"</span>: <span class="string">"success"</span>,</span><br><span class="line">  <span class="attr">"data"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"media_name"</span>: <span class="string">"侠客岛"</span>,</span><br><span class="line">      <span class="attr">"abstract"</span>: <span class="string">"今天又有大新闻啦。据美国多家媒体的消息， 12月15日，中国海军在南海趁美国一艘无人水下潜航器（UUV）故障之机，抢在美军打捞人员之前将其捞走。"</span>,</span><br><span class="line">      <span class="attr">"impression_count"</span>: <span class="number">7433280</span>,</span><br><span class="line">      <span class="attr">"image_list"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"url"</span>: <span class="string">"http://p1.pstatp.com/list/134b00048dd993d77429"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"url"</span>: <span class="string">"http://p3.pstatp.com/list/1349000017bb1b3c7366"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"url"</span>: <span class="string">"http://p3.pstatp.com/list/134c0003788b24d74346"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"media_avatar_url"</span>: <span class="string">"http://p3.pstatp.com/large/1731/4112623237"</span>,</span><br><span class="line">      <span class="attr">"external_visit_count"</span>: <span class="number">14999</span>,</span><br><span class="line">      <span class="attr">"article_type"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"more_mode"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"tag"</span>: <span class="string">"news_military"</span>,</span><br><span class="line">      <span class="attr">"is_favorite"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"has_m3u8_video"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"keywords"</span>: <span class="string">"南海诸岛,南海,美国,专属经济区,公约,国际法"</span>,</span><br><span class="line">      <span class="attr">"has_mp4_video"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"favorite_count"</span>: <span class="number">1059</span>,</span><br><span class="line">      <span class="attr">"display_url"</span>: <span class="string">"http://toutiao.com/group/6365056560833659137/"</span>,</span><br><span class="line">      <span class="attr">"article_sub_type"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"bury_count"</span>: <span class="number">9</span>,</span><br><span class="line">      <span class="attr">"title"</span>: <span class="string">"美国想在南海下黑手，结果被中国抓个正着！这下送礼了"</span>,</span><br><span class="line">      <span class="attr">"datetime"</span>: <span class="string">"2016-12-17 22:27"</span>,</span><br><span class="line">      <span class="attr">"has_video"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"share_url"</span>: <span class="string">"http://toutiao.com/group/6365056560833659137/?iid=41507200127&amp;app=news_article"</span>,</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">6365056560833659000</span>,</span><br><span class="line">      <span class="attr">"source"</span>: <span class="string">"侠客岛"</span>,</span><br><span class="line">      <span class="attr">"comment_count"</span>: <span class="number">17</span>,</span><br><span class="line">      <span class="attr">"article_url"</span>: <span class="string">"http://toutiao.com/group/6365056560833659137/"</span>,</span><br><span class="line">      <span class="attr">"create_time"</span>: <span class="number">1481980801</span>,</span><br><span class="line">      <span class="attr">"recommend"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"tips"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"aggr_type"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"item_source_url"</span>: <span class="string">"/item/6365059050404577794/"</span>,</span><br><span class="line">      <span class="attr">"media_url"</span>: <span class="string">"http://toutiao.com/m3741758306/"</span>,</span><br><span class="line">      <span class="attr">"display_time"</span>: <span class="number">1481980795</span>,</span><br><span class="line">      <span class="attr">"publish_time"</span>: <span class="number">1481980795</span>,</span><br><span class="line">      <span class="attr">"go_detail_count"</span>: <span class="number">504591</span>,</span><br><span class="line">      <span class="attr">"group_flags"</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">"middle_mode"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"display_title"</span>: <span class="string">" "</span>,</span><br><span class="line">      <span class="attr">"gallary_image_count"</span>: <span class="number">3</span>,</span><br><span class="line">      <span class="attr">"item_seo_url"</span>: <span class="string">"/item/6365059050404577794/"</span>,</span><br><span class="line">      <span class="attr">"tag_id"</span>: <span class="number">6365056560833659000</span>,</span><br><span class="line">      <span class="attr">"source_url"</span>: <span class="string">"/group/6365056560833659137/"</span>,</span><br><span class="line">      <span class="attr">"article_genre"</span>: <span class="string">"article"</span>,</span><br><span class="line">      <span class="attr">"large_mode"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"item_id"</span>: <span class="number">6365059050404578000</span>,</span><br><span class="line">      <span class="attr">"natant_level"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"is_digg"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"seo_url"</span>: <span class="string">"/group/6365056560833659137/"</span>,</span><br><span class="line">      <span class="attr">"repin_count"</span>: <span class="number">1059</span>,</span><br><span class="line">      <span class="attr">"url"</span>: <span class="string">"http://toutiao.com/group/6365056560833659137/"</span>,</span><br><span class="line">      <span class="attr">"level"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"digg_count"</span>: <span class="number">55</span>,</span><br><span class="line">      <span class="attr">"behot_time"</span>: <span class="number">1481984828</span>,</span><br><span class="line">      <span class="attr">"hot"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"preload_web"</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">"comments_count"</span>: <span class="number">17</span>,</span><br><span class="line">      <span class="attr">"has_image"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"is_bury"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"group_id"</span>: <span class="number">6365056560833659000</span>,</span><br><span class="line">      <span class="attr">"middle_image"</span>: &#123;</span><br><span class="line">        <span class="attr">"url"</span>: <span class="string">"http://p1.pstatp.com/list/134b00048dd993d77429"</span>,</span><br><span class="line">        <span class="attr">"width"</span>: <span class="number">415</span>,</span><br><span class="line">        <span class="attr">"url_list"</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"http://p1.pstatp.com/list/134b00048dd993d77429"</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"http://pb3.pstatp.com/list/134b00048dd993d77429"</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">"url"</span>: <span class="string">"http://pb3.pstatp.com/list/134b00048dd993d77429"</span></span><br><span class="line">          &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">"uri"</span>: <span class="string">"list/134b00048dd993d77429"</span>,</span><br><span class="line">        <span class="attr">"height"</span>: <span class="number">536</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"next"</span>: &#123;</span><br><span class="line">    <span class="attr">"max_behot_time"</span>: <span class="number">1481984828</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>我们要获取的新闻都在 <code>data</code> 数组里, 这里我只罗列了部分  </p>
-<p>以下给出部分类型 仅供参考<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'推荐'</span>: <span class="string">'__all__'</span>,</span><br><span class="line"><span class="string">'热点'</span>: <span class="string">'news_hot'</span>,</span><br><span class="line"><span class="string">'社会'</span>: <span class="string">'news_society'</span>,</span><br><span class="line"><span class="string">'娱乐'</span>: <span class="string">'news_entertainment'</span>,</span><br><span class="line"><span class="string">'科技'</span>: <span class="string">'news_tech'</span>,</span><br><span class="line"><span class="string">'军事'</span>: <span class="string">'news_military'</span>,</span><br><span class="line"><span class="string">'体育'</span>: <span class="string">'news_sports'</span></span><br><span class="line"><span class="string">'汽车'</span>: <span class="string">'news_car'</span>,</span><br><span class="line"><span class="string">'财经'</span>: <span class="string">'news_finance'</span>,</span><br><span class="line"><span class="string">'国际'</span>: <span class="string">'news_world'</span>,</span><br><span class="line"><span class="string">'时尚'</span>: <span class="string">'news_fashion'</span>,</span><br><span class="line"><span class="string">'旅游'</span>: <span class="string">'news_travel'</span>,</span><br><span class="line"><span class="string">'探索'</span>: <span class="string">'news_discovery'</span>,</span><br><span class="line"><span class="string">'育儿'</span>: <span class="string">'news_baby'</span>,</span><br><span class="line"><span class="string">'养生'</span>: <span class="string">'news_regimen'</span>,</span><br><span class="line"><span class="string">'故事'</span>: <span class="string">'news_story'</span>,</span><br><span class="line"><span class="string">'美文'</span>: <span class="string">'news_essay'</span>,</span><br><span class="line"><span class="string">'游戏'</span>: <span class="string">'news_game'</span>,</span><br><span class="line"><span class="string">'历史'</span>: <span class="string">'news_history'</span>,</span><br><span class="line"><span class="string">'美食'</span>: <span class="string">'news_food'</span>,</span><br></pre></td></tr></table></figure></p>
+<p>以下给出部分类型 仅供参考<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'推荐'</span>: <span class="string">'__all__'</span>,</span><br><span class="line"><span class="string">'热点'</span>: <span class="string">'news_hot'</span>,</span><br><span class="line"><span class="string">'社会'</span>: <span class="string">'news_society'</span>,</span><br><span class="line"><span class="string">'娱乐'</span>: <span class="string">'news_entertainment'</span>,</span><br><span class="line"><span class="string">'科技'</span>: <span class="string">'news_tech'</span>,</span><br><span class="line"><span class="string">'军事'</span>: <span class="string">'news_military'</span>,</span><br><span class="line"><span class="string">'体育'</span>: <span class="string">'news_sports'</span></span><br><span class="line"><span class="string">'汽车'</span>: <span class="string">'news_car'</span>,</span><br><span class="line"><span class="string">'财经'</span>: <span class="string">'news_finance'</span>,</span><br><span class="line"><span class="string">'国际'</span>: <span class="string">'news_world'</span>,</span><br><span class="line"><span class="string">'时尚'</span>: <span class="string">'news_fashion'</span>,</span><br><span class="line"><span class="string">'旅游'</span>: <span class="string">'news_travel'</span>,</span><br><span class="line"><span class="string">'探索'</span>: <span class="string">'news_discovery'</span>,</span><br><span class="line"><span class="string">'育儿'</span>: <span class="string">'news_baby'</span>,</span><br><span class="line"><span class="string">'养生'</span>: <span class="string">'news_regimen'</span>,</span><br><span class="line"><span class="string">'故事'</span>: <span class="string">'news_story'</span>,</span><br><span class="line"><span class="string">'美文'</span>: <span class="string">'news_essay'</span>,</span><br><span class="line"><span class="string">'游戏'</span>: <span class="string">'news_game'</span>,</span><br><span class="line"><span class="string">'历史'</span>: <span class="string">'news_history'</span>,</span><br><span class="line"><span class="string">'美食'</span>: <span class="string">'news_food'</span>,</span><br></pre></td></tr></table></figure></p>
 <h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://toutiao.<span class="keyword">com</span>/api/article/recent/?<span class="keyword">source</span>=<span class="number">2</span>&amp;category=news_hot&amp;<span class="keyword">as</span>=A105177907376A5&amp;<span class="keyword">cp</span>=<span class="number">5797</span>C7865AD54E1&amp;<span class="built_in">count</span>=<span class="number">20</span>&amp;offset=<span class="number">0</span>&amp;_=<span class="number">1481986412</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>category</code> 指类型  </li>
@@ -212,11 +213,13 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-09T10:17:54.914Z" itemprop="dateUpdated">2017年1月9日 18:17</time>
+    Last updated: <time datetime="2017-01-09T10:17:54.914Z" itemprop="dateUpdated">2017-01-09 18:17:54</time>
 </span><br>
 
 
-        这里写留言或版权声明：<a href="/2017/01/05/今日头条Api分析/" target="_blank" rel="external">https://imeiji.github.io/2017/01/05/今日头条Api分析/</a>
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/01/05/今日头条Api分析/" target="_blank" rel="external">https://imeiji.github.io/2017/01/05/今日头条Api分析/</a>
+        
     </div>
     <footer>
         <a href="https://imeiji.github.io">
@@ -312,17 +315,23 @@
 
     
 
-<div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="今日头条Api分析" data-title="今日头条Api分析" data-url="https://imeiji.github.io/2017/01/05/今日头条Api分析/"></div>
-</div>
-<script>
-lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
-
-var duoshuoQuery = {short_name:'imeiji', theme: 'none'};
-lazyScripts.push('/js/embed.min.js?v=1.4.4');
 
 
-</script>
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'imeijimyblog';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
 
 
 
@@ -364,14 +373,16 @@ lazyScripts.push('/js/embed.min.js?v=1.4.4');
 
 
         <p>
-            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
         <p>
             <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>这是个标题 &copy; 2015 - 2017</span>
+            <span>iMeiji &copy; 2015 - 2017</span>
         </p>
     </div>
 </footer>
@@ -435,7 +446,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 </script>
 
-<script src="/js/main.min.js?v=1.4.4"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -455,7 +466,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.4.4" async></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -463,6 +474,26 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
 
 
 </body>
