@@ -75,7 +75,7 @@
             <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
-                主页
+                Home
               </a>
             </li>
         
@@ -97,6 +97,13 @@
               <a href="https://github.com/iMeiji" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/resume"  >
+                <i class="icon icon-lg icon-link"></i>
+                Resume
               </a>
             </li>
         
@@ -384,7 +391,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/07/10/Windows 软件清单/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Windows 软件清单</h4>
+      </a>
+    </div>
   
 
   
@@ -568,10 +582,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '这是个标题';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

@@ -62,7 +62,7 @@
             <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
-                主页
+                Home
               </a>
             </li>
         
@@ -84,6 +84,13 @@
               <a href="https://github.com/iMeiji" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/resume"  >
+                <i class="icon icon-lg icon-link"></i>
+                Resume
               </a>
             </li>
         
@@ -137,15 +144,15 @@
 
         
 
-            <a href="/categories/Hexo/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
+            <a href="/categories/GFW/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light">GFW</a>
 
         
 
-            <a href="/categories/GFW/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">GFW</a>
+            <a href="/categories/VPS/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">VPS</a>
 
         
 
-            <a href="/categories/VPS/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">VPS</a>
+            <a href="/categories/Hexo/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
 
         
     </nav>
@@ -163,6 +170,34 @@
     
             <div class="waterfall">
           
+
+            <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2017-07-10 00:22:01" datetime="2017-07-09T16:22:01.000Z"  itemprop="datePublished">2017-07-10</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Default/">Default</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/07/10/Windows 软件清单/">Windows 软件清单</a>
+    </h3>
+  
+
+
+
+    
+  </article>
+</div>
+
+        
 
             <div class="waterfall-item">
   <article class="article-card archive-article">
@@ -348,10 +383,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '这是个标题';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

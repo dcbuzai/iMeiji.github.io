@@ -69,7 +69,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
             <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
-                主页
+                Home
               </a>
             </li>
         
@@ -91,6 +91,13 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
               <a href="https://github.com/iMeiji" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/resume"  >
+                <i class="icon icon-lg icon-link"></i>
+                Resume
               </a>
             </li>
         
@@ -484,10 +491,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '这是个标题';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

@@ -62,7 +62,7 @@
             <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
-                主页
+                Home
               </a>
             </li>
         
@@ -84,6 +84,13 @@
               <a href="https://github.com/iMeiji" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/resume"  >
+                <i class="icon icon-lg icon-link"></i>
+                Resume
               </a>
             </li>
         
@@ -133,11 +140,7 @@
             ">All</a>
         
 
-            <a href="/categories/Default/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">Default</a>
-
-        
-
-            <a href="/categories/Hexo/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
+            <a href="/categories/Default/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Default</a>
 
         
 
@@ -146,6 +149,10 @@
         
 
             <a href="/categories/VPS/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light active">VPS</a>
+
+        
+
+            <a href="/categories/Hexo/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
 
         
     </nav>
@@ -432,10 +439,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '这是个标题';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
