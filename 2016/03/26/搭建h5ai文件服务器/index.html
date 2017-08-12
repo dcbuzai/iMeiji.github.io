@@ -30,7 +30,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
 <meta property="og:description" content="h5ai是一款不错的php目录列表程序，也就是php列目录工具,支持apache和nginx官网 https://larsjung.de/h5ai/
 介绍
 h5ai is a modern file indexer for HTTP web servers with focus on your files. Directories are displayed in a appealing way">
-<meta property="og:updated_time" content="2016-04-03T08:13:54.096Z">
+<meta property="og:updated_time" content="2017-08-12T13:18:09.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建h5ai文件服务器">
 <meta name="twitter:description" content="h5ai是一款不错的php目录列表程序，也就是php列目录工具,支持apache和nginx官网 https://larsjung.de/h5ai/
@@ -118,7 +118,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -192,7 +192,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
 </blockquote>
 <p>Requires PHP 5.5+ and works fine with Apache httpd, lighttpd, nginx and Cherokee.  </p>
 <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><p>一条命令安装LAMP<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install mysql-server mysql-client apache2 php5 php5-cli libapache2-mod-php5 php5-mysql php5-curl php5-gd php-pear php5-imagick php5-mcrypt php5-memcache php5-mhash php5-sqlite php5-xmlrpc php5-xsl php5-json php5-dev libpcre3-dev</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装h5ai"><a href="#安装h5ai" class="headerlink" title="安装h5ai"></a>安装h5ai</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /<span class="keyword">var</span>/www/html</span><br><span class="line">wget https:<span class="comment">//release.larsjung.de/h5ai/h5ai-0.28.1.zip</span></span><br><span class="line">apt-get install unzip     </span><br><span class="line">unzip h5ai*.<span class="keyword">zip</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装h5ai"><a href="#安装h5ai" class="headerlink" title="安装h5ai"></a>安装h5ai</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /<span class="keyword">var</span>/www/html</span><br><span class="line"># wget https:<span class="comment">//release.larsjung.de/h5ai/h5ai-0.28.1.zip 旧版本有 搜索/打包下载 等功能</span></span><br><span class="line">wget https:<span class="comment">//release.larsjung.de/h5ai/h5ai-0.29.0.zip</span></span><br><span class="line">apt-get install unzip     </span><br><span class="line">unzip h5ai*.<span class="keyword">zip</span></span><br></pre></td></tr></table></figure>
 <h2 id="查看h5ai配置"><a href="#查看h5ai配置" class="headerlink" title="查看h5ai配置"></a>查看h5ai配置</h2><p>打开<code>http://YOUR-DOMAIN.TLD/_h5ai/public/index.php</code></p>
 <ul>
 <li><p><code>Cache directory</code>这个是系统文件夹的权限，分别修改public和private文件夹里的cache文件夹就可以正常</p>
@@ -208,12 +208,14 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
 </ul>
 <h2 id="配置web服务器"><a href="#配置web服务器" class="headerlink" title="配置web服务器"></a>配置web服务器</h2><p>将/_h5ai/public/index.php添加到web服务器配置文件中默认首页文件列表代码的最后位置  </p>
 <ul>
-<li><p>Apache2<br><code>cd  /etc/apache2/sites-available/</code><br>修改配置文件,增加一行<br><code>DirectoryIndex index.html index.php /_h5ai/public/index.php</code><br>然后执行    <code>a2enmod rewrite</code><br>最后    <code>service apache2 reload</code></p>
+<li><p>Apache2<br><code>cd  /etc/apache2/sites-available/</code><br>修改配置文件,增加一行<br><code>DirectoryIndex index.html index.php /_h5ai/public/index.php</code><br>然后执行<code>a2enmod rewrite</code><br>最后<code>service apache2 reload</code></p>
 </li>
-<li><p>Nginx<br>对应的nginx配置文件中找到如下一行<br><code>index  index.html  index.php</code><br>改为<br><code>index  index.html  index.php /_h5ai/public/index.php</code><br>最后    <code>service nginx reload</code></p>
+<li><p>Nginx<br> 对应的nginx配置文件中找到如下一行<br> <code>index  index.html  index.php</code><br> 改为<br> <code>index  index.html  index.php /_h5ai/public/index.php</code><br> 最后<code>service nginx reload</code></p>
 </li>
 </ul>
-<p>正常安装后，文件放置到和_h5ai平级目录就可以，当然也可以建立文件夹等等..</p>
+<p>正常安装后，文件放置到和_h5ai平级目录就可以，当然也可以建立文件夹等等</p>
+<p>使用 LNMP 一键包的要删除 PHP 禁用函数</p>
+<p>编辑 <code>/usr/local/php/etc/php.ini</code>  将 <code>scandir</code> <code>exec</code> <code>passthru</code> 三个函数删除, 并保存重启lnmp</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://note.nyko.moe/2015/09/26/h5ai/" target="_blank" rel="external">h5ai-默默的文件分享系统</a>  </p>
 
         </div>
@@ -222,7 +224,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2016-04-03T08:13:54.096Z" itemprop="dateUpdated">2016-04-03 16:13:54</time>
+    最后更新时间：<time datetime="2017-08-12T13:18:09.034Z" itemprop="dateUpdated">2017-08-12 21:18:09</time>
 </span><br>
 
 
@@ -385,7 +387,7 @@ h5ai is a modern file indexer for HTTP web servers with focus on your files. Dir
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
