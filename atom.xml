@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://imeiji.github.io/"/>
-  <updated>2017-07-09T17:09:31.087Z</updated>
+  <updated>2017-08-22T14:33:41.775Z</updated>
   <id>https://imeiji.github.io/</id>
   
   <author>
@@ -14,6 +14,154 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android Studio设置教程</title>
+    <link href="https://imeiji.github.io/2017/08/22/Android%20Studio%E8%AE%BE%E7%BD%AE%E6%95%99%E7%A8%8B/"/>
+    <id>https://imeiji.github.io/2017/08/22/Android Studio设置教程/</id>
+    <published>2017-08-22T09:16:34.000Z</published>
+    <updated>2017-08-22T14:33:41.775Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>文章是很久之前就写好了, 一直没有发出来, 这篇教程比较折腾, 好处是你的系统盘不会给塞满, 我把所有配置都转移到非系统盘, 如果你的 AS 用久了可以看看 <code>.AndroidStudio</code> 文件夹有多大, 再考虑转移配置</p>
+</blockquote>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网 <a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">http://developer.android.com/sdk/index.html</a><br>各个版本 <a href="http://tools.android.com/download/studio" target="_blank" rel="external">http://tools.android.com/download/studio</a> </p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>请按照实际情况进行修改(Android SDK 我就没配置, 反正可以选下载路径)<br>PATH的要特别注意, 要加到原来的后面  </p>
+<ul>
+<li><p>ADB</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Android=D:<span class="symbol">\U</span>sers<span class="symbol">\X</span>XX<span class="symbol">\A</span>ppData<span class="symbol">\L</span>ocal<span class="symbol">\A</span>ndroid<span class="symbol">\s</span>dk<span class="symbol">\p</span>latform-tools</span><br><span class="line">Path=;<span class="variable">%Android%</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Java</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=<span class="symbol">C:</span>\Program Files\Java\jdk1.<span class="number">8.0_66</span></span><br><span class="line">CLASSPATH=.;%JAVA_HOME%\<span class="class"><span class="keyword">lib</span>;</span>%JAVA_HOME%\<span class="class"><span class="keyword">lib</span>\<span class="title">tools</span>.<span class="title">jar</span></span></span><br><span class="line"><span class="comment"># 注意，%PATH%为原来的环境变量值，添加";"和后面的内容到原来值的后面</span></span><br><span class="line">PATH=%PATH%;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Gradle</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Android Studio正式版后就内置了一个Gradle，当然你也可以另外去Gradle官网下载一个</span><br><span class="line">GRADLE_HOME=D:<span class="symbol">\P</span>rogram Files<span class="symbol">\a</span>ndroid-studio<span class="symbol">\g</span>radle<span class="symbol">\g</span>radle-2.10</span><br><span class="line">PATH=<span class="variable">%PATH%</span>;<span class="variable">%GRADLE_HOME%</span><span class="symbol">\b</span>in</span><br><span class="line"># 依赖仓库存放路径，平时构建工程时下载的依赖库都放在这里</span><br><span class="line"># 不配置的话，Windows中默认是在C:<span class="symbol">\U</span>sers<span class="symbol">\&lt;</span>username&gt;<span class="symbol">\.</span>gradle的</span><br><span class="line"># 重装系统时忘记备份，又不想重新下载依赖的话，就赶紧把这里改了</span><br><span class="line">GRADLE_USER_HOME=D:<span class="symbol">\U</span>sers<span class="symbol">\X</span>XX<span class="symbol">\.</span>gradle</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Android SDK  </p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ANDROID_HOME=E:<span class="symbol">\D</span>evTools<span class="symbol">\A</span>ndroid<span class="symbol">\s</span>dk</span><br><span class="line">PATH=<span class="variable">%PATH%</span>;<span class="variable">%ANDROID_HOME%</span><span class="symbol">\t</span>ools;<span class="variable">%ANDROID_HOME%</span><span class="symbol">\p</span>latform-tools</span><br><span class="line"># ADB端口，可以避免国内一堆软件，如酷狗音乐啥的把ADB端口抢占了，值随便改个不常用的就行</span><br><span class="line">ANDROID_ADB_SERVER_PORT=7123</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Android Studio</p>
+<p>本来是用默认路径也没什么问题，不过在 Windows 环境下，什么东西都往系统盘里塞老是让人觉得不舒服</p>
+<ul>
+<li><p>修改 <code>idea.properties</code> 文件  </p>
+<p>进入 Android Studio 的安装目录, 进入bin文件夹 ,打开 <code>idea.properties</code>  , 修改对应的路径为新路径即可. (PS: 如果你的 <code>idea.properties</code>  文件文件没有以下内容, <a href="http://tools.android.com/tech-docs/configuration" target="_blank" rel="external">点这里</a>下载一个, 覆盖到bin文件夹)</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">idea<span class="selector-class">.config</span><span class="selector-class">.path</span>=D:/Users/XXX/.AndroidStudio/config</span><br><span class="line">idea<span class="selector-class">.system</span><span class="selector-class">.path</span>=D:/Users/XXX/.AndroidStudio/system</span><br><span class="line">idea<span class="selector-class">.plugins</span><span class="selector-class">.path</span>=$&#123;idea<span class="selector-class">.system</span><span class="selector-class">.path</span>&#125;/plugins</span><br><span class="line">idea<span class="selector-class">.log</span><span class="selector-class">.path</span>=$&#123;idea<span class="selector-class">.system</span><span class="selector-class">.path</span>&#125;/log</span><br></pre></td></tr></table></figure>
+<p>注意<code>plugins</code>和<code>log</code>的路径不要乱改, 不然插件会安装不上<br>这种方式改完之后问题是解决了, 可是之后你在增量升级 AS 的时候就会发现总是失败, 原因就是因为你改了 bin 目录下的 <code>idea.properties</code>  文件, 那么 Google 给出的解决办法就是不要直接改 bin 目录下的 <code>idea.properties</code>  文件, 而是在 <code>%USERPROFILE%\.{FOLDER_NAME}\</code>  目录下创建一个空的<code>idea.properties</code>  文件, 把修改过的 <code>idea.properties</code> 文件复制到这里</p>
+</li>
+<li><p><code>.android</code> 文件夹的修改 </p>
+<p>这个文件夹是由 Android SDK 配置模拟器生成的, 也是最占空间的一个<br>首先, 需要添加一个系统的环境变量<br>变量名<code>ANDROID_SDK_HOME</code><br>变量值<code>D:\Users\XXX</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="设置Android-Studio"><a href="#设置Android-Studio" class="headerlink" title="设置Android Studio"></a>设置Android Studio</h2><p>不要急着新建工程,先Configure→Settings去修改设置</p>
+<ul>
+<li><p>修改主题,全局字体</p>
+<p><img src="http://i.imgur.com/TBaBBoL.png" alt=""><br>主题默认就好,个人不喜欢深色主题,字体选<code>Microsoft YaHei UI</code>就不错了</p>
+<p>​</p>
+</li>
+<li><p>禁止自动打开上次的工程</p>
+<p><img src="http://i.imgur.com/hWbUQJw.png" alt="Imgur"></p>
+<p>​</p>
+</li>
+<li><p>设置代理</p>
+<p><img src="http://i.imgur.com/dNkZTxI.png" alt="Imgur"></p>
+<p>​</p>
+</li>
+<li><p>SDK目录</p>
+<p><img src="http://i.imgur.com/Kh2X0VK.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>快捷键</p>
+<p>不推荐使用 Eclipse 快捷键了, 很多功能会缺失, 强烈建议使用 IDEA 的快捷键<br><img src="http://i.imgur.com/ISqSFIO.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>鼠标悬停显示文档, 格式化&amp;导包提示</p>
+<p><img src="http://i.imgur.com/RuGGzmM.png" alt="Imgur"></p>
+<ul>
+<li>鼠标指针悬停若干时间, 显示文档, 时间自己改</li>
+<li>就是按格式化代码或者导包时, 是否会显示个对话框</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>自动导包</p>
+<p><img src="http://i.imgur.com/YuCVtDI.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>显示行号, 显示方法分隔线</p>
+<p><img src="http://i.imgur.com/UWDzVPc.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>代码智能提示</p>
+<p><img src="http://i.imgur.com/WQy5bVQ.png" alt="Imgur"></p>
+<ol>
+<li>敲什么字符会提示<ul>
+<li>All 大小写全部符合</li>
+<li>None 不管大小写, 符合就提示</li>
+<li>First letter 第一个字符符合就OK, 其他随意</li>
+</ul>
+</li>
+<li>自动弹出时间自己改下</li>
+</ol>
+<p>​</p>
+</li>
+<li><p>代码样式配置</p>
+<p><img src="http://i.imgur.com/0ZOskTn.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>修改注释位置, 禁用“语句堆一行”</p>
+<p><img src="http://i.imgur.com/7z4UgAF.png" alt="Imgur"></p>
+<ul>
+<li>Line breaks: 启用的话, 表示保持断行</li>
+<li>Comment at frist column: 启用的话, 注释符号就会在行首, 否则就按照缩进来注释</li>
+<li>Control statement in one line: 格式化代码的时候, 会把些很短的语句合并成一行. 我觉得这样影响代码可读性, 故取消</li>
+<li>Ensure right margin is not exceeded: 表示代码超过标准线就自动换行</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>修改新建文件文件头</p>
+<p><img src="http://i.imgur.com/HjWR4NW.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>修改文件编码为UTF-8</p>
+<p><img src="http://i.imgur.com/Wu7625a.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>修改Gradle目录</p>
+<p><img src="http://i.imgur.com/2vYMJBz.png" alt="Imgur"></p>
+</li>
+</ul>
+<ul>
+<li><p>开启Instant Run</p>
+<p><img src="http://i.imgur.com/ynI0US0.png" alt="Imgur"></p>
+</li>
+</ul>
+<hr>
+<p>到此已经配置好 AS , 新建一个工程试试吧<br>为了保险, 打开Android Studio内置的终端, 在输入如下命令查看 gradle 版本:<code>gradlew -v</code><br>配置没问题的话就显示你的 gradle 版本, 如果你配置错误 AS 会自动下载并安装个 gradle</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><a href="http://color-themes.com/" target="_blank" rel="external">IDEA主题</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.zhihu.com/question/38604486" target="_blank" rel="external">自定义androidstudio的配置文件目录后，无法正常安装和卸载插件，是何原因？ - 知乎</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;文章是很久之前就写好了, 一直没有发出来, 这篇教程比较折腾, 好处是你的系统盘不会给塞满, 我把所有配置都转移到非系统盘, 如果你的 AS 用久了可以看看 &lt;code&gt;.AndroidStudio&lt;/code&gt; 文件夹有多大, 再考虑转移配置&lt;/
+    
+    </summary>
+    
+      <category term="Android" scheme="https://imeiji.github.io/categories/Android/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Windows 软件清单</title>
