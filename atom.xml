@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://imeiji.github.io/"/>
-  <updated>2017-10-02T10:22:47.836Z</updated>
+  <updated>2017-10-20T17:18:56.263Z</updated>
   <id>https://imeiji.github.io/</id>
   
   <author>
@@ -14,6 +14,152 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见排序算法 - Java实现</title>
+    <link href="https://imeiji.github.io/2017/10/21/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%20-%20Java%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://imeiji.github.io/2017/10/21/常见排序算法 - Java实现/</id>
+    <published>2017-10-21T06:10:54.000Z</published>
+    <updated>2017-10-20T17:18:56.263Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>总结常见的排序算法，重新学习。</p>
+</blockquote>
+<h2 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h2><blockquote>
+<p>我想对于它每个学过C语言的都会了解，这可能是很多人接触的第一个排序算法。</p>
+</blockquote>
+<ul>
+<li><p>基本思想</p>
+<p>冒泡排序（Bubble Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<p><img src="https://i.loli.net/2017/10/20/59e9e6dec6984.gif" alt="bubble.gif"></p>
+</li>
+<li><p>算法描述</p>
+<ol>
+<li>比较相邻的元素，如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤1~3，直到没有任何一对数字需要比较。</li>
+</ol>
+</li>
+<li><p>代码实现</p>
+<p>冒泡排序需要两个嵌套的循环. 其中, 外层循环移动游标; 内层循环遍历游标及之后(或之前)的元素, 通过两两交换的方式, 每次只确保该内循环结束位置排序正确, 然后内层循环周期结束, 交由外层循环往后(或前)移动游标, 随即开始下一轮内层循环, 以此类推, 直至循环结束。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 冒泡排序</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * 1. 比较相邻的元素。如果第一个比第二个大，就交换他们两个。</span><br><span class="line"> * 2. 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</span><br><span class="line"> * 3. 针对所有的元素重复以上的步骤，除了最后一个。</span><br><span class="line"> * 4. 持续每次对越来越少的元素重复上面的步骤①~③，直到没有任何一对数字需要比较。</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> arr 待排序数组</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = arr.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;  <span class="comment">//外层循环移动游标</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;    <span class="comment">//内层循环遍历游标及之后(或之前)的元素</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">                arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"Sorting: "</span> + Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小结</p>
+<p>冒泡排序算法复杂度:</p>
+<p>| 平均时间复杂度 | 最好情况 | 最坏情况  | 空间复杂度 |<br>| ——- | —- | —– | —– |<br>| O(n²)   | O(n) | O(n²) | O(1)  |</p>
+<ul>
+<li>若文件初状为正序，则一趟起泡就可完成排序，排序码的比较次数为<code>n-1</code>，且没有记录移动，时间复杂度是<code>O(n)</code></li>
+<li>若文件初态为逆序，则需要<code>n-1</code>趟起泡，每趟进行<code>n-i</code>次排序码的比较，且每次比较都移动三次，比较和移动次数均达到最大值 <code>O(n2)</code></li>
+<li>起泡排序平均时间复杂度为<code>O(n2)</code></li>
+</ul>
+<blockquote>
+<p>注意：由于冒泡排序只在相邻元素大小不符合要求时才调换他们的位置，它并不改变相同元素之间的相对顺序，因此它是稳定的排序算法</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><ul>
+<li><p>基本思想</p>
+<p>选择排序的基本思想：比较 + 交换。</p>
+<p>在未排序序列中找到最小（大）元素，存放到未排序序列的起始位置。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
+<p><img src="https://i.loli.net/2017/10/21/59ea1f75af23e.gif" alt="selection.gif"></p>
+</li>
+<li><p>算法描述</p>
+<ol>
+<li>从待排序序列中，找到关键字最小的元素；</li>
+<li>如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换；</li>
+<li>从余下的 N - 1 个元素中，找出关键字最小的元素，重复1、2步，直到排序结束。</li>
+</ol>
+</li>
+<li><p>代码实现</p>
+<p>选择排序比较简单，以下是我自己的实现，跟官方版差不多，所以完全可以参考。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 选择排序</span><br><span class="line"> *</span><br><span class="line"> * 1. 从待排序序列中，找到关键字最小的元素；</span><br><span class="line"> * 2. 如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换；</span><br><span class="line"> * 3. 从余下的 N - 1 个元素中，找出关键字最小的元素，重复1、2步，直到排序结束。</span><br><span class="line"> *    仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</span><br><span class="line"> * <span class="doctag">@param</span> arr  待排序数组</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> min = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; arr.length; j++)&#123;    <span class="comment">//选出之后待排序中值最小的位置</span></span><br><span class="line">            <span class="keyword">if</span>(arr[j] &lt; arr[min])&#123;</span><br><span class="line">                min = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(min != i)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[min];      <span class="comment">//交换操作</span></span><br><span class="line">            arr[min] = arr[i];</span><br><span class="line">            arr[i] = temp;</span><br><span class="line">            System.out.println(<span class="string">"Sorting:  "</span> + Arrays.toString(arr));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小结</p>
+<p>以下是选择排序复杂度:</p>
+<p>| 平均时间复杂度 | 最好情况  | 最坏情况  | 空间复杂度 |<br>| ——- | —– | —– | —– |<br>| O(n²)   | O(n²) | O(n²) | O(1)  |</p>
+<p>选择排序的简单和直观名副其实，这也造就了它”出了名的慢性子”，无论是哪种情况，哪怕原数组已排序完成，它也将花费将近 <code>n²/2</code> 次遍历来确认一遍。其实选择排序可以看成冒泡排序的优化，因为其目的相同，只是选择排序只有在确定了最小数的前提下才进行交换，大大减少了交换的次数。</p>
+<p>所以结论是选择排序和冒泡排序一样，都是 <code>O(n²)</code> 的效率，但选择排序无疑更快，因为它交换的次数更少。 </p>
+<blockquote>
+<p>注意：选择排序是不稳定的排序</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="直接插入排序（Direct-Insertion-Sort）"><a href="#直接插入排序（Direct-Insertion-Sort）" class="headerlink" title="直接插入排序（Direct Insertion Sort）"></a>直接插入排序（Direct Insertion Sort）</h2><p>插入排序的设计初衷是<strong>往有序的数组中快速插入一个新的元素</strong>。它的算法思想是：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的.</p>
+<p>插入排序由于操作不尽相同, 可分为 <code>直接插入排序</code> , <code>折半插入排序</code>(又称二分插入排序), <code>链表插入排序</code> , <code>希尔排序</code> 。我们先来看下直接插入排序。</p>
+<ul>
+<li><p>基本思想</p>
+<p>直接插入排序的基本思想是：将数组中的所有元素依次跟前面已经排好的元素相比较，如果选择的元素比已排序的元素小，则交换，直到全部元素都比较过为止。</p>
+<p><img src="https://i.loli.net/2017/10/20/59e9efbeea1fb.gif" alt="insertion.gif"></p>
+</li>
+<li><p>算法描述</p>
+<p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
+<ol>
+<li>从第一个元素开始，该元素可以认为已经被排序</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
+<li>将新元素插入到该位置后</li>
+<li>重复步骤2~5</li>
+</ol>
+<p>如果比较操作的代价比交换操作大的话，可以采用二分查找法来减少比较操作的数目。该算法可以认为是插入排序的一个变种，称为二分查找插入排序。</p>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 插入排序</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * 1. 从第一个元素开始，该元素可以认为已经被排序</span><br><span class="line"> * 2. 取出下一个元素，在已经排序的元素序列中从后向前扫描</span><br><span class="line"> * 3. 如果该元素（已排序）大于新元素，将该元素移到下一位置</span><br><span class="line"> * 4. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</span><br><span class="line"> * 5. 将新元素插入到该位置后</span><br><span class="line"> * 6. 重复步骤2~5</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> arr 待排序数组</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">DirectInsertionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &gt; <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j - <span class="number">1</span>] &lt;= arr[j]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[j];  <span class="comment">//交换操作</span></span><br><span class="line">            arr[j] = arr[j - <span class="number">1</span>];</span><br><span class="line">            arr[j - <span class="number">1</span>] = temp;</span><br><span class="line">            System.out.println(<span class="string">"Sorting: "</span> + Arrays.toString(arr));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小结</p>
+<p>直接插入排序复杂度如下：</p>
+<p>| 平均时间复杂度 | 最好情况 | 最坏情况  | 空间复杂度 |<br>| ——- | —- | —– | —– |<br>| O(n²)   | O(n) | O(n²) | O(1)  |<br>文件初态不同时，直接插入排序所耗费的时间有很大差异。若文件初态为正序，则每个待插入的记录只需要比较一次就能够找到合适的位置插入，故算法的时间复杂度为O(n)，这时最好的情况。若初态为反序，则第i个待插入记录需要比较i+1次才能找到合适位置插入，故时间复杂度为O(n2)，这时最坏的情况。</p>
+<blockquote>
+<p>注意： 由于直接插入排序每次只移动一个元素的位，并不会改变值相同的元素之间的排序， 因此它是一种稳定排序。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="快速排序（Quick-Sort）"><a href="#快速排序（Quick-Sort）" class="headerlink" title="快速排序（Quick Sort）"></a>快速排序（Quick Sort）</h2><p>快速排序（Quicksort）是对冒泡排序的一种改进，借用了分治的思想，由C. A. R. Hoare在1962年提出。</p>
+<ul>
+<li><p>基本思想</p>
+<p>快速排序的基本思想：挖坑填数+分治法。</p>
+<p>首先选一个轴值(pivot，也有叫基准的)，通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
+<p><img src="https://i.loli.net/2017/10/20/59e9f54756f84.gif" alt="quick.gif"></p>
+</li>
+<li><p>算法描述</p>
+<p>快速排序使用分治策略来把一个序列（list）分为两个子序列（sub-lists）。步骤为：</p>
+<ol>
+<li>从数列中挑出一个元素，称为”基准”（pivot）。</li>
+<li>重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</li>
+<li>递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
+</ol>
+<p>递归到最底部时，数列的大小是零或一，也就是已经排序好了。这个算法一定会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</p>
+<p><img src="https://camo.githubusercontent.com/9cb8c34e660405d200c427ad58643e8bb2ff8e5e/68747470733a2f2f692e696d6775722e636f6d2f575476517549412e706e67" alt=""></p>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 快速排序（递归）</span><br><span class="line"> *</span><br><span class="line"> * 1. 从数列中挑出一个元素，称为"基准"（pivot）。</span><br><span class="line"> * 2. 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</span><br><span class="line"> * 3. 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</span><br><span class="line"> * <span class="doctag">@param</span> arr   待排序数组</span><br><span class="line"> * <span class="doctag">@param</span> low   左边界</span><br><span class="line"> * <span class="doctag">@param</span> high  右边界</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(low &gt;= high) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> left = low;</span><br><span class="line">    <span class="keyword">int</span> right = high;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> temp = arr[left];   <span class="comment">//挖坑1：保存基准的值</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right)&#123;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right &amp;&amp; arr[right] &gt;= temp)&#123;  <span class="comment">//坑2：从后向前找到比基准小的元素，插入到基准位置坑1中</span></span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[left] = arr[right];</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right &amp;&amp; arr[left] &lt;= temp)&#123;   <span class="comment">//坑3：从前往后找到比基准大的元素，放到刚才挖的坑2中</span></span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[right] = arr[left];</span><br><span class="line">    &#125;</span><br><span class="line">    arr[left] = temp;   <span class="comment">//基准值填补到坑3中，准备分治递归快排</span></span><br><span class="line">    System.out.println(<span class="string">"Sorting: "</span> + Arrays.toString(arr));</span><br><span class="line">    quickSort(arr, low, left-<span class="number">1</span>);</span><br><span class="line">    quickSort(arr, left+<span class="number">1</span>, high);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小结</p>
+<p>快速排序是通常被认为在同数量级（O(nlog₂n)）的排序方法中平均性能最好的。但若初始序列按关键码有序或基本有序时，快排序反而蜕化为冒泡排序。为改进之，通常以“三者取中法”来选取基准记录，即将排序区间的两个端点与中点三个记录关键码居中的调整为支点记录。快速排序是一个不稳定的排序方法。</p>
+<p>以下是快速排序算法复杂度:</p>
+<p>| 平均时间复杂度   | 最好情况      | 最坏情况  | 空间复杂度         |<br>| ——— | ——— | —– | ————- |<br>| O(nlog₂n) | O(nlog₂n) | O(n²) | O(1)（原地分区递归版） |</p>
+<p>快速排序排序效率非常高。 虽然它运行最糟糕时将达到 <code>O(n²)</code> 的时间复杂度, 但通常平均来看, 它的时间复杂为 <code>O(nlog₂n)</code> ，比同样为 <code>O(nlog₂n)</code> 时间复杂度的归并排序还要快。快速排序似乎更偏爱乱序的数列， 越是乱序的数列， 它相比其他排序而言，相对效率更高。</p>
+<blockquote>
+<p>注意：同选择排序相似, 快速排序每次交换的元素都有可能不是相邻的, 因此它有可能打破原来值为相同的元素之间的顺序. 因此, 快速排序并不稳定.</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;总结常见的排序算法，重新学习。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;冒泡排序（Bubble-Sort）&quot;&gt;&lt;a href=&quot;#冒泡排序（Bubble-Sort）&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序（Bub
+    
+    </summary>
+    
+      <category term="Java" scheme="https://imeiji.github.io/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Android 仿知乎分享控件</title>
@@ -27,13 +173,7 @@
 <li>首先获取手机内所有支持分享的应用，得到 ResolveInfo 对象，利用反射获取应用图标等信息</li>
 <li>然后用 RecyclerView 的 GridLayoutManager 网格布局展示，自己实现点击事件就差不多完成了</li>
 </ol>
-<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://i.loli.net/2017/10/02/59d21337b143b.png" alt="1.png" title="">
-                </div>
-                <div class="image-caption">1.png</div>
-            </figure>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://i.loli.net/2017/10/02/59d21337b143b.png" alt="1.png"></p>
 <h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><ul>
 <li><p>写一个分享界面的布局</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:padding</span>=<span class="string">"16dp"</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">"我是广告栏"</span></span><br><span class="line">        <span class="attr">android:textAppearance</span>=<span class="string">"@style/TextAppearance.AppCompat"</span></span><br><span class="line">        <span class="attr">android:textSize</span>=<span class="string">"18sp"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">View</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"1px"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"@android:color/darker_gray"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/list_view"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>

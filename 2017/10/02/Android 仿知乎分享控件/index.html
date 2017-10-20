@@ -25,7 +25,10 @@
 首先获取手机内所有支持分享的应用，得到 ResolveInfo 对象，利用反射获取应用图标等信息
 然后用 RecyclerView 的 GridLayoutManager 网格布局展示，自己实现点击事件就差不多完成了
 
-截图">
+截图
+简单实现
+写一个分享界面的布局
+1234567891011121314151617181920212">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 仿知乎分享控件">
 <meta property="og:url" content="https://imeiji.github.io/2017/10/02/Android 仿知乎分享控件/index.html">
@@ -35,7 +38,10 @@
 首先获取手机内所有支持分享的应用，得到 ResolveInfo 对象，利用反射获取应用图标等信息
 然后用 RecyclerView 的 GridLayoutManager 网格布局展示，自己实现点击事件就差不多完成了
 
-截图">
+截图
+简单实现
+写一个分享界面的布局
+1234567891011121314151617181920212">
 <meta property="og:image" content="https://i.loli.net/2017/10/02/59d21337b143b.png">
 <meta property="og:updated_time" content="2017-10-02T10:22:47.836Z">
 <meta name="twitter:card" content="summary">
@@ -45,7 +51,10 @@
 首先获取手机内所有支持分享的应用，得到 ResolveInfo 对象，利用反射获取应用图标等信息
 然后用 RecyclerView 的 GridLayoutManager 网格布局展示，自己实现点击事件就差不多完成了
 
-截图">
+截图
+简单实现
+写一个分享界面的布局
+1234567891011121314151617181920212">
 <meta name="twitter:image" content="https://i.loli.net/2017/10/02/59d21337b143b.png">
     
         <link rel="alternate" type="application/atom+xml" title="这是个标题" href="/atom.xml">
@@ -129,7 +138,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -202,13 +211,7 @@
 <li>首先获取手机内所有支持分享的应用，得到 ResolveInfo 对象，利用反射获取应用图标等信息</li>
 <li>然后用 RecyclerView 的 GridLayoutManager 网格布局展示，自己实现点击事件就差不多完成了</li>
 </ol>
-<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://i.loli.net/2017/10/02/59d21337b143b.png" alt="1.png" title="">
-                </div>
-                <div class="image-caption">1.png</div>
-            </figure>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://i.loli.net/2017/10/02/59d21337b143b.png" alt="1.png"></p>
 <h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><ul>
 <li><p>写一个分享界面的布局</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:padding</span>=<span class="string">"16dp"</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">"我是广告栏"</span></span><br><span class="line">        <span class="attr">android:textAppearance</span>=<span class="string">"@style/TextAppearance.AppCompat"</span></span><br><span class="line">        <span class="attr">android:textSize</span>=<span class="string">"18sp"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">View</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"1px"</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">"@android:color/darker_gray"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.RecyclerView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/list_view"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -242,7 +245,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2017-10-02T10:22:47.836Z" itemprop="dateUpdated">2017-10-02 18:22:47</time>
+    Last updated: <time datetime="2017-10-02T10:22:47.836Z" itemprop="dateUpdated">2017-10-02 18:22:47</time>
 </span><br>
 
 
@@ -320,7 +323,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/10/21/常见排序算法 - Java实现/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">常见排序算法 - Java实现</h4>
+      </a>
+    </div>
   
 
   
@@ -398,7 +408,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
@@ -491,6 +501,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 
