@@ -45,7 +45,7 @@
 <meta property="og:image" content="http://i.imgur.com/Wu7625a.png">
 <meta property="og:image" content="http://i.imgur.com/2vYMJBz.png">
 <meta property="og:image" content="http://i.imgur.com/ynI0US0.png">
-<meta property="og:updated_time" content="2017-08-22T14:33:41.775Z">
+<meta property="og:updated_time" content="2017-10-26T11:51:49.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio设置教程">
 <meta name="twitter:description" content="文章是很久之前就写好了, 一直没有发出来, 这篇教程比较折腾, 好处是你的系统盘不会给塞满, 我把所有配置都转移到非系统盘, 如果你的 AS 用久了可以看看 .AndroidStudio 文件夹有多大, 再考虑转移配置
@@ -327,7 +327,19 @@
 </ul>
 <hr>
 <p>到此已经配置好 AS , 新建一个工程试试吧<br>为了保险, 打开Android Studio内置的终端, 在输入如下命令查看 gradle 版本:<code>gradlew -v</code><br>配置没问题的话就显示你的 gradle 版本, 如果你配置错误 AS 会自动下载并安装个 gradle</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p><a href="http://color-themes.com/" target="_blank" rel="external">IDEA主题</a></p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ul>
+<li>Gradle 设置代理</li>
+</ul>
+<ol>
+<li><p>找到 <code>gradle.properties</code> 这个文件，如果你按照我上面的环境变量设置，那么文件在<code>GRADLE_USER_HOME=D:\Users\XXX\.gradle</code> 下，否则在 C 盘</p>
+</li>
+<li><p>修改 <code>gradle.properties</code> 这个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## Proxy setup</span><br><span class="line">systemProp.proxySet=&quot;true&quot;</span><br><span class="line">systemProp.http.keepAlive=&quot;true&quot;</span><br><span class="line">systemProp.http.proxyHost=127.0.0.1</span><br><span class="line">systemProp.http.proxyPort=1080</span><br><span class="line">systemProp.https.keepAlive=&quot;true&quot;</span><br><span class="line">systemProp.https.proxyHost=127.0.0.1</span><br><span class="line">systemProp.https.proxyPort=1080</span><br><span class="line">## 据说只要添加下面这行 https://www.zhihu.com/question/37810416/answer/82464203</span><br><span class="line">org.gradle.jvmargs=-DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><a href="http://color-themes.com/" target="_blank" rel="external">IDEA主题</a></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.zhihu.com/question/38604486" target="_blank" rel="external">自定义androidstudio的配置文件目录后，无法正常安装和卸载插件，是何原因？ - 知乎</a></p>
 
         </div>
@@ -336,7 +348,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-08-22T14:33:41.775Z" itemprop="dateUpdated">2017-08-22 22:33:41</time>
+    Last updated: <time datetime="2017-10-26T11:51:49.473Z" itemprop="dateUpdated">2017-10-26 19:51:49</time>
 </span><br>
 
 
